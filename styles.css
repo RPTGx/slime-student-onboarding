@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Use border-box for better sizing */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    height: 100vh; /* Full height */
+    width: 100vw; /* Full width */
+}
+
+.scroll-container {
+    display: flex; /* Flexbox for horizontal scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to sections */
+    height: 100vh; /* Full height */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.panel {
+    min-width: 1920px; /* Set width for 1080p resolution */
+    height: 100vh; /* Full height */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between text and image */
+    align-items: center; /* Center items vertically */
+    padding: 40px; /* Padding for panels */
+    scroll-snap-align: start; /* Snap each panel to the start */
+}
+
+/* Updated colors for each panel */
+.panel1 {
+    background: #2C3E50; /* Midnight Blue */
+}
+
+.panel2 {
+    background: #1ABC9C; /* Deep Teal */
+}
+
+.panel3 {
+    background: #F39C12; /* Mustard Gold */
+}
+
+.panel4 {
+    background: #34495E; /* Wet Asphalt */
+}
+
+.panel5 {
+    background: #963827; /* Bright Red */
+}
+
+.panel6 {
+    background: #16A085; /* Emerald Green */
+}
+
+.panel7 {
+    background: #D35400; /* Pumpkin Orange */
+}
+
+.panel8 {
+    background: #2980B9; /* Belize Hole Blue */
+}
+
+.panel9 {
+    background: #8E44AD; /* Wisteria Purple */
+}
+
+.panel10 {
+    background: #27AE60; /* Nephritis Green */
+}
+
+/* Text styling with shadow for better readability */
+h1, p {
+    color: white; /* Keep text color white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better contrast */
+}
+
+.text-container {
+    display: flex; /* Flexbox layout for text */
+    flex-direction: column; /* Stack heading and paragraph vertically */
+    justify-content: center; /* Center content vertically */
+    max-width: 50%; /* Limit width for text container */
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 4rem); /* Scalable font size */
+    margin: 0; /* Reset margin */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+}
+
+p {
+    text-align: justify; /* Justified text */
+    max-width: 600px; /* Limit width for paragraph */
+    line-height: 1.5; /* Improve line height for readability */
+    margin: 10px; /* Reset margin */
+}
+
+/* Ensure the image takes full width of its container */
+.image-container {
+    position: relative; /* Positioning relative to the panel */
+    width: 100%; /* Set width to 100% for responsive scaling */
+    max-width: 500px; /* Maximum width for larger screens */
+    height: auto; /* Allow height to adjust automatically */
+}
+
+.image-container img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .panel {
+        flex-direction: column; /* Stack text and image vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .text-container {
+        max-width: 90%; /* Allow more space for text on smaller screens */
+        text-align: justify; /* Justify text on mobile */
+        margin-bottom: 20px; /* Space between text and image */
+    }
+
+    .image-container {
+        width: 90%; /* Image container takes full width on smaller screens */
+        max-width: 500px; /* Limit maximum width on smaller screens */
+    }
+}
+
+@media (max-width: 1920px) {
+    .panel {
+        min-width: 100vw; /* Ensure panels take full width on smaller screens */
+    }
+}
+
+.swipe {
+    margin: 30px; /* Adjust this value as needed */
+    font-size: 2rem; /* Example: make the text a bit larger */
+    color: white; /* Example: change text color */
+    text-align: center; /* Center align the text */
+}
+
+.button-container {
+    margin-top: 20px; /* Space above the buttons */
+    display: flex; /* Use flexbox for button layout */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+}
+
+.btn {
+    padding: 12px 24px; /* Padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* Text color */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4CAF50, #45a049); /* Gradient background for primary button */
+}
+
+.btn-secondary {
+    background: linear-gradient(90deg, #f44336, #d32f2f); /* Gradient background for secondary button */
+}
+
+/* Hover effects */
+.btn:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #45a049, #4CAF50); /* Reverse gradient on hover */
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(90deg, #d32f2f, #f44336); /* Reverse gradient on hover */
+}
+
+/* Active state */
+.btn:active {
+    transform: translateY(0); /* Reset position on click */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
